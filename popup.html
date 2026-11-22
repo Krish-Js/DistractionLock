@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Focus Lock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="brand-copy"><span class="brand-name">FOCUS<span>LOCK</span></span><span class="brand-caption">MAKE ROOM FOR WHAT MATTERS.</span></div>
+      </div>
+      <div id="status" class="status"><i></i><span>STANDBY</span></div>
+    </header>
+
+    <section class="hero-panel" aria-labelledby="session-heading">
+      <div class="hero-topline"><span class="eyebrow" id="session-heading">YOUR FOCUS WINDOW</span><span class="live-label"><i></i> LOCAL SESSION</span></div>
+      <div class="timer-wrap">
+        <div class="timer" id="timer" aria-live="off">25:00</div>
+        <span class="timer-unit">MIN : SEC</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+      <div class="duration-row" aria-label="Choose session length">
+        <button data-minutes="25" class="duration selected"><strong>25</strong><span>MIN</span></button>
+        <button data-minutes="50" class="duration"><strong>50</strong><span>MIN</span></button>
+        <button data-minutes="90" class="duration"><strong>90</strong><span>MIN</span></button>
+      </div>
+      <button id="start" class="primary"><span>Start focus session</span><b aria-hidden="true">↗</b></button>
+      <button id="stop" class="stop-button hidden">End session early</button>
+      <p class="session-note" id="session-note">A little focus goes a long way.</p>
+    </section>
+
+    <section class="sites-panel" aria-labelledby="sites-heading">
+      <div class="section-heading">
+        <div><span class="eyebrow">YOUR DISTRACTION LIST</span><h2 id="sites-heading">Sites on pause<span class="heading-period">.</span></h2></div>
+        <div class="site-count"><strong id="count">4</strong><span>BLOCKED</span></div>
+      </div>
+      <form id="add-form" class="add-form">
+        <span class="input-prefix" aria-hidden="true">＋</span>
+        <input id="site-input" type="text" placeholder="Add a website…" autocomplete="off" spellcheck="false" aria-label="Website domain">
+        <button type="submit" aria-label="Add website">Add</button>
+      </form>
+      <p id="error" class="error" role="alert"></p>
+      <ul id="site-list" class="site-list"></ul>
+      <p class="list-footnote"><span class="footnote-dot"></span> Domains include all subdomains.</p>
+    </section>
+
+    <footer class="footer"><span>YOUR ATTENTION, YOURS.</span><span class="footer-right"><span class="privacy-mark">◈</span> STORED ON THIS DEVICE</span></footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

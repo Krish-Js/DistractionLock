@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Lock",
+  "version": "1.1.0",
+  "description": "A beautifully simple website blocker for focused study sessions.",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Focus Lock",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
